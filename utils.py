@@ -1,3 +1,5 @@
+import random
+
 def IsValid(seq, match = {'(':')', '[':']', '{':'}', '<':'>'}, 
             pad = '.') -> bool:
     """
@@ -26,7 +28,6 @@ def SampleCorrect(n, match = {'(':')', '[':']', '{':'}', '<':'>'},
     """
     Create a set of gramatically correct sequences. Works faster than purely random generation.
     """
-    from random import choices
     res = set()
     while len(res) < n:
         stack = []
@@ -34,9 +35,9 @@ def SampleCorrect(n, match = {'(':')', '[':']', '{':'}', '<':'>'},
         newstr = ""
         while len(newstr) < MAX_LEN:
             if len(stack) == 0:
-                toadd = choices(pool, k=1)[0]
+                toadd = random.choices(pool, k=1)[0]
             else:
-                toadd = choices(pool + [match[stack[-1]]], k=1)[0]
+                toadd = random.choices(pool + [match[stack[-1]]], k=1)[0]
             if toadd in match.keys():
                 stack.append(toadd)
             elif toadd in match.values():
