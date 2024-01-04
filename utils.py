@@ -1,6 +1,3 @@
-# this is update branch
-# I am now updating it
-
 def IsValid(seq, match = {'(':')', '[':']', '{':'}', '<':'>'}, 
             pad = '.') -> bool:
     """
@@ -25,10 +22,11 @@ def IsValid(seq, match = {'(':')', '[':']', '{':'}', '<':'>'},
     return len(stack) == 0
 
 def SampleCorrect(n, match = {'(':')', '[':']', '{':'}', '<':'>'}, 
-                  pad = '.', MAX_LEN = 10) -> set(str):
+                  pad = '.', MAX_LEN = 10) -> set:
     """
     Create a set of gramatically correct sequences. Works faster than purely random generation.
     """
+    from random import choices
     res = set()
     while len(res) < n:
         stack = []
@@ -52,7 +50,7 @@ def SampleCorrect(n, match = {'(':')', '[':']', '{':'}', '<':'>'},
     return res
 
 def RealLen(seqs, pad = '.', 
-            MAX_LEN = 10) -> list(int):
+            MAX_LEN = 10) -> list:
     """
     For dataset investigation purposes. 
     Gives the real lenghts (ie without padding) of a list of sequences.
