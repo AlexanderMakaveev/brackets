@@ -92,3 +92,13 @@ def performance(outs, groundt, treshold = 0.5) -> dict:
             "Fscore": Fscore,
             }
     return perf
+
+def ReadDataset(filename) -> list:
+    seqs=[]
+    with open('test1.txt', 'r') as file:
+        while True:
+            seq = file.readline()
+            if not seq:
+                break
+            seqs.append(seq.strip())
+    return seqs
