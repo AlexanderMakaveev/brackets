@@ -19,6 +19,6 @@ That said, I should state that the purposes of this project are purely pedagogic
 
 ### APPROACH
 
-We will be building a series of ML model with increasing complexity and comparing their performance. We will start with "vanilla" neural networks (NNs), comparing width vs depth, then move on to convolutional NNs, and finally try out more elaborate sequence models such as GRUs, LSTMs, and transformers.
+We will be building a series of ML model with increasing complexity and comparing their performance. We will start with "vanilla" neural networks (NNs), comparing width vs depth, then move on to convolutional NNs (1D convolution). The next steps are to try decision trees and finally more elaborate sequence models such as GRUs, LSTMs, and transformers (the latter are likely to be an overkill).
 
 We will be using PyTorch for handling data and buidling/training the models.
